@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript学習</title>
+</head>
+<body>
+    <p>Hello</p>
+    <script>
+      // すごろくゲームのクラス
+class SugorokuGame {
+  constructor(size) {
+    this.size = size; // すごろくのサイズ（マスの数）
+    this.position = 0; // プレイヤーの位置
+  }
+
+  rollDice() {
+    return Math.floor(Math.random() * 6) + 1; // 1から6までのランダムな数を返す
+  }
+
+  playTurn() {
+    const diceRoll = this.rollDice(); // サイコロを振る
+    console.log(`サイコロの目: ${diceRoll}`);
+
+    this.position += diceRoll; // プレイヤーの位置を更新
+
+    if (this.position >= this.size) {
+      console.log('ゴールに到着しました！おめでとうございます！');
+      return true; // ゴールに到着したらゲーム終了
+    } else {
+      console.log(`現在の位置: ${this.position}`);
+      return false; // ゴールに到着していない場合は続行
+    }
+  }
+
+  startGame() {
+    console.log('すごろくゲームを開始します！');
+
+    while (true) {
+      if (this.playTurn()) {
+        break; // ゴールに到着したらループを終了
+      }
+    }
+
+    console.log('ゲーム終了！');
+  }
+}
+
+// すごろくゲームのインスタンスを作成して開始
+const game = new SugorokuGame(30);
+game.startGame();
+    </script>
+</body>
+</html>

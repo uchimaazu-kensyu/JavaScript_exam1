@@ -1,0 +1,26 @@
+#tetris {
+    width: 320px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .game-board {
+    border: 1px solid #000;
+    width: 200px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .score-board {
+    margin-top: 20px;
+  }
+  
+  .score-board p {
+    font-size: 16px;
+  }
+  
+  .score-board #score {
+    font-weight: bold;
+  }
+  
